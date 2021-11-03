@@ -1,0 +1,33 @@
+:root {
+  --font-color: #6C6C6C;
+  --font-pale-color: #E4E4E4;
+  --background-select-color: #EEF4F3;
+  --border-color: #e4e4e4;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--font-color);
+  
+  font-size: 16px;
+}
+
+.page {
+  display: flex;
+}
+
+.header {
+  margin-top: 36px;
+  margin-bottom: 10px;
+  
+  font-size: 20px;
+  font-weight: 200;
+  text-transform: uppercase;
+}

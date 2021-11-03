@@ -1,0 +1,44 @@
+.add-task {
+    display: flex;
+    margin-top: 20px;
+}
+
+.add-task__input {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid var(--border-color);
+    border-radius: 7px;
+    padding-left: 12px;
+}
+
+.add-task {
+    display: block;
+    position: relative;
+    height: 45px;
+}
+
+.add-task__submit {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 35px;
+    border: none;
+    padding: 8px 19px;
+    z-index: 2;
+    background: var(--background-select-color);
+    
+    color: var(--font-color);
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    
+    cursor: pointer;
+}
+
+
+.add-task__input {
+    font-size: 16px;
+}
