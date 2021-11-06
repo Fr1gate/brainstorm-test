@@ -2,14 +2,61 @@ import React, { Component } from 'react';
 import './SideMenu.css'
 
 class SideMenu extends Component {
+    constructor(props) {
+        super(props);
+
+        this.menu = React.createRef();
+
+        ///// BINDS /////
+        this.handleClick = this.handleClick.bind(this)
+        this.handleMenuToggle = this.handleMenuToggle.bind(this);
+    }
+
+
+    handleClick(e) {
+        this.props.onCategoryChange(+e.currentTarget.dataset.key)
+    }
+
+    listItems() {
+        const listItems = this.props.categories.map((category, key) => {
+            let classes = 'sidemenu__item ';
+            if (key === this.props.selectedCategory) {
+                classes += 'sidemenu__item_selected';
+            }
+
+            return (
+                <li 
+                    className={classes} 
+                    key={key}
+                    data-key={key}
+                    onClick={this.handleClick}
+                >
+                    <button className="sidemenu__link" >{category.categoryName}</button>
+                </li>
+            )
+        })
+
+        return listItems;
+    }
+
+    handleMenuToggle(e) {
+        this.menu.current.classList.toggle('sidemenu_closed')
+        e.currentTarget.classList.toggle('sidemenu__btn_opened')
+    }
+
     render() {
         return (
-            <div className="sidemenu">
-                <ul className="sidemenu__list">
-                    <li className="sidemenu__item"><a className="sidemenu__link" href="javascript:void(0)">Работа</a></li>
-                    <li className="sidemenu__item sidemenu__item_selected"><a className="sidemenu__link" href="javascript:void(0)">Дом</a></li>
-                    <li className="sidemenu__item"><a className="sidemenu__link" href="javascript:void(0)">Семья</a></li>
-                </ul>
+            <div>
+                <button onClick={this.handleMenuToggle} className="sidemenu__btn sidemenu__btn_opened">{/*sidemenu__btn_opened*/}
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div ref={this.menu} className="sidemenu ">{/*sidemenu_closed*/}
+                    <ul className="sidemenu__list">
+                        {this.listItems()}
+                    </ul>
+                </div>
             </div>
         );
     }

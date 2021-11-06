@@ -6,12 +6,23 @@ import './Tasks.css';
 
 
 class Tasks extends Component {
+
     render() {
         return (
-            <div class="container">
-                <TodoList />
-                <DoneList />
-                <AddTask />
+            <div className="container">
+                <TodoList 
+                    tasks={this.props.category.tasksToDo}
+                    deleteTask={this.props.deleteTask}
+                    checkTask={this.props.checkTask}
+                    editTask={this.props.editTask}    
+                />
+                <DoneList 
+                    tasks={this.props.category.tasksDone}
+                    uncheckTask={this.props.uncheckTask}
+                />
+                <AddTask 
+                    addTask={this.props.addTask} 
+                />
             </div>
         );
     }

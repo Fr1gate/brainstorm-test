@@ -12,6 +12,7 @@
     border: 3px solid var(--border-color);
     border-radius: 7px;
     padding-left: 12px;
+    padding-right: 125px;
 }
 
 .add-task {
@@ -26,6 +27,8 @@
     right: 5px;
     height: 35px;
     border: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     padding: 8px 19px;
     z-index: 2;
     background: var(--background-select-color);

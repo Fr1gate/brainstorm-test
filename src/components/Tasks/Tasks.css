@@ -3,3 +3,11 @@
     flex-grow: 1;
     text-align: center;
 }
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 15px;
+        flex-grow: 1;
+        text-align: center;
+    }
+}
