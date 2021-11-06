@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './SideMenu.css'
 
 class SideMenu extends Component {
@@ -31,7 +32,7 @@ class SideMenu extends Component {
                     data-key={key}
                     onClick={this.handleClick}
                 >
-                    <button className="sidemenu__link" >{category.categoryName}</button>
+                    <Link className="sidemenu__link" to={`/${category.categoryName}`}>{category.categoryName}</Link>
                 </li>
             )
         })
